@@ -1,0 +1,11 @@
+
+public class HeapSort<Key extends Comparable<Key>> extends BinaryHeap<Key> {
+	
+	public HeapSort(int capacity) {
+		super(capacity);
+	}
+
+	public static void main(String[] args) {
+		
+	}
+}

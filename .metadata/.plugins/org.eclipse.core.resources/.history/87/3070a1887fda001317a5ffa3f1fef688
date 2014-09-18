@@ -1,0 +1,30 @@
+import java.io.*;
+public class UtopianTree {
+    public static void main(String args[] ) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int _line = 0;
+        int _cases = 0;
+        int _case = 1;
+        int[] _ans = new int[61];
+        _ans[0] = 1;
+        for(String line = br.readLine(); line != null; line = br.readLine()){
+            _line++;
+            if(_line == 1)    _cases = Integer.parseInt(line);
+            else if(_line == _case + 1){
+                int _number = Integer.parseInt(line);
+                int _length = _ans.length;
+                if(_length > _number)
+                    System.out.println(_ans[_number]);
+                else{
+                    for(int i = _length; i < _number+1; i++){
+                        if(i%2 == 0)    _ans[i+1] = _ans[i] + 1;
+                        else    _ans[i+1] = 2*_ans[i];
+                    }
+                    System.out.println(_ans[_number]);
+                }
+                _case++;
+            }
+            if(_case > _cases)    break;
+        }        
+    }
+}

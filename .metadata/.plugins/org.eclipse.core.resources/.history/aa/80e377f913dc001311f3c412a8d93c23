@@ -1,0 +1,34 @@
+
+public class BinarySearchTree<Key extends Comparable<Key>> {
+	
+	@SuppressWarnings("unused")
+	private class Node {
+		private Key key;
+		private int M;
+		
+		public Node(int M, Key key){
+			this.M = M;
+			this.key = key;
+		}
+	}
+
+	private Key[] pq;
+	private int N;
+	
+	@SuppressWarnings("unchecked")
+	public BinarySearchTree(int capacity){
+		pq = (Key[]) new Comparable[capacity+1];
+	}
+	
+	public void put(Key key){
+		get(key);
+	}
+
+	private void get(Key key) {
+		
+	}
+
+	public static void main(String[] args) {
+		
+	}
+}

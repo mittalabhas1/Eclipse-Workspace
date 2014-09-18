@@ -1,0 +1,48 @@
+import java.util.Arrays;
+
+
+public class DuplicateKeyQuickSort {
+	
+	public static void swap(int[] arr, int a, int b){
+		int swap = arr[a];
+		arr[a] = arr[b];
+		arr[b] = swap;
+	}
+	
+	private static int[] partition(int[] arr, int lo, int hi) {
+		int[] duplicate = new int[2];
+		int i = lo, lt = lo, gt = hi;
+		while(i <= gt){
+			if(arr[i] < arr[lo]){
+				swap(arr, arr[i], arr[lt]);
+				i++;
+				lt++;
+			}
+			if(arr[i] > arr[lo]){
+				swap(arr, arr[gt], arr[i]);
+				gt--;
+			}
+			if(arr[i] == arr[lo])	i++;
+		}
+		duplicate[0] = lt;
+		duplicate[1] = gt;
+		return duplicate;
+	}
+	
+	public static void sort(int[] arr, int lo, int hi){
+		if(hi<=lo)	return;
+		int[] k = partition(arr, lo, hi);
+		sort(arr, lo, k[0]-1);
+		sort(arr, k[1]+1, hi);
+	}
+
+	public static void sort(int[] arr){
+		sort(arr, 0, arr.length-1);
+		System.out.println(Arrays.toString(arr));
+	}
+	
+	public static void main(String[] args) {
+		int[] arr = {5,8,6,4,2,9,7,5,9,4,7,6,2,8,7,5,6};
+		sort(arr);
+	}
+}

@@ -1,0 +1,34 @@
+import java.io.*;
+public class MissingAP {
+    
+    public static void checkAP(String[] input){
+        int first = Integer.parseInt(input[0]) - Integer.parseInt(input[1]);
+        int missing = 0;
+        for(int i = 1, len = input.length; i < len-1; i++){
+            int next = Integer.parseInt(input[i]) - Integer.parseInt(input[i+1]);
+            if(first > 0 && next > 0){
+                if(next > first)    missing = i;
+                if(next < first)    missing = 0;
+            }else{
+                if(next < first)    missing = i;
+                if(next > first)    missing = 0;
+            }
+        }
+        int missingInt = (Integer.parseInt(input[missing]) + Integer.parseInt(input[missing+1]))/2;
+        System.out.print(missingInt);
+    }
+    
+    public static void main(String args[] ) throws Exception {
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        int _line = 0;
+        for(String x = in.readLine(); x != null; x = in.readLine()){
+            _line++;
+            if(_line == 1)
+                continue;
+            if(_line == 2){
+                String[] input = x.split(" ");
+                checkAP(input);
+            }
+        }
+    }
+}

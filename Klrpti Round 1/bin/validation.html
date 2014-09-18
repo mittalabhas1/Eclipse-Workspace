@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validation</title>
+	<style type="text/css">
+	.help{
+		color: red;
+	}
+	</style>
+	<script type="text/javascript" src="jquery.js" ></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+	<form action="validation.html" method="post" name="form1">
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="name" id="name" onblur="checkName()"></td>
+				<td><span id="name_help" class="help"></span></td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<select name="gender" id="gender" onblur="checkGender()">
+						<option value="">--</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+					</select>
+				</td>
+				<td><span id="gender_help" class="help"></span></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password" id="pass" onblur="checkPassword()"></td>
+				<td><span id="pass_help" class="help"></span></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email" id="email" onblur="checkMail()"></td>
+				<td><span id="email_help" class="help"></span></td>
+			</tr>
+			<tr>
+				<td>Contact</td>
+				<td><input type="text" name="contact" id="contact" onblur="checkContact()"></td>
+				<td><span id="contact_help" class="help"></span></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" name="submit" value="Submit" onclick="checkForm()" ></td>
+				<td></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

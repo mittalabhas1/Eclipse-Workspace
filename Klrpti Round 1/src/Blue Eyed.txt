@@ -1,0 +1,4 @@
+The n blued eyes people will leave on the nth day.
+Since they are intelligent people, if a person sees everyone to be red eyed, he will leave on the first day confirming that he is the only blue eyed one in them.
+If there are two blue eyed people, one blue eyed can see the other and still sees that he's not leaving, hence understanding that he didnot leave because there is another blued eyed too, which is obviously he himself so they both leave on the second day.
+This way, n blue eyed will leave on nth day.
